@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
   const [festivals, setFestivals] = useState([]);
@@ -11,15 +12,23 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Top 10 Indian Festivals</h1>
+    <div className="app-container">
+      <h1 className="app-title">Top 10 Indian Festivals</h1>
 
       {festivals.map((festival, index) => (
-        <div key={index} style={{ marginBottom: "15px" }}>
-          <h3>
-            {festival.name} – {festival.date}
-          </h3>
-          <p>{festival.description}</p>
+        <div
+          key={index}
+          className={`festival-card card-${index % 10}`}
+        >
+          <div className="festival-name">
+            {festival.name}
+          </div>
+          <div className="festival-date">
+            {festival.date}
+          </div>
+          <div className="festival-desc">
+            {festival.description}
+          </div>
         </div>
       ))}
     </div>
@@ -27,3 +36,4 @@ function App() {
 }
 
 export default App;
+

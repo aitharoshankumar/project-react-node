@@ -1,0 +1,80 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page background */
+body {
+  background: linear-gradient(135deg, #f9f9f9, #eef2f7);
+  color: #333;
+}
+
+/* Main container */
+.app-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Page title */
+.app-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #1e3a8a;
+}
+
+/* Festival card */
+.festival-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.festival-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.festival-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.festival-date {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.festival-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Color themes */
+.card-0 { border-left-color: #ef4444; }
+.card-1 { border-left-color: #f59e0b; }
+.card-2 { border-left-color: #10b981; }
+.card-3 { border-left-color: #3b82f6; }
+.card-4 { border-left-color: #8b5cf6; }
+.card-5 { border-left-color: #ec4899; }
+.card-6 { border-left-color: #22c55e; }
+.card-7 { border-left-color: #0ea5e9; }
+.card-8 { border-left-color: #eab308; }
+.card-9 { border-left-color: #f97316; }
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2rem;
+  }
+}
+
