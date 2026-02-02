@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/aitharoshankumar/festival.git'
+                git branch: 'roshan', 
+                    url: 'https://github.com/aitharoshankumar/festival.git', 
+                    credentialsId: 'github-creds'
             }
         }
 
-        stage('Build Containers') {
+        stage('Build Containers and Deploy Application') {
             steps {
-                sh 'docker-compose build'
-            }
-        }
-
-        stage('Deploy Application') {
-            steps {
-                sh 'docker-compose up -d'
+               // dir('react-31-1-26') {
+                    sh 'docker-compose down --remove-orphans || true'
+                    sh 'docker-compose build'
+                    sh 'docker-compose up -d'
+              //  }
             }
         }
     }
